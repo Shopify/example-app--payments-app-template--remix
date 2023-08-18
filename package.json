@@ -1,8 +1,8 @@
 {
-  "name": "app",
+  "name": "payments-app-template-remix",
   "private": true,
   "scripts": {
-    "build": "tsc && remix build",
+    "build": "NODE_ENV=production remix build",
     "predev": "prisma generate && prisma migrate deploy",
     "dev": "shopify app dev",
     "config:link": "shopify app config link",
@@ -11,8 +11,7 @@
     "deploy": "shopify app deploy",
     "config:use": "shopify app config use",
     "env": "shopify app env",
-    "start": "remix-serve build/index.js",
-    "docker-start": "npm run setup && npm run start",
+    "start": "remix-serve build",
     "setup": "prisma generate && prisma migrate deploy",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "shopify": "shopify",
@@ -30,25 +29,24 @@
     "@shopify/shopify-api": "^8.0.2",
     "@shopify/shopify-app-remix": "^2.1.0",
     "@shopify/shopify-app-session-storage-prisma": "^2.0.0",
+    "cross-env": "^7.0.3",
     "isbot": "latest",
     "prisma": "^4.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@remix-run/dev": "^1.19.1",
     "@remix-run/eslint-config": "^2.0.0",
-    "@shopify/app-bridge-types": "^0.0.3",
     "@types/eslint": "^8.40.0",
-    "@types/node": "^20.6.3",
-    "@types/react": "^18.2.31",
-    "@types/react-dom": "^18.2.14",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
-    "prettier": "^3.1.1",
-    "typescript": "^5.2.2"
+    "prettier": "^3.1.1"
   },
   "workspaces": {
     "packages": [
+      "web",
+      "web/frontend",
       "extensions/*"
     ]
   },
