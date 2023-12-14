@@ -43,6 +43,7 @@ export async function loader({ request }) {
 /**
  * Saves the app's configuration.
  */
+// [START build-offsite-payments-app.configure]
 export async function action({ request }) {
   const { session } = await authenticate.admin(request);
 
@@ -63,6 +64,7 @@ export async function action({ request }) {
   if (userErrors.length > 0) return json({ errors: userErrors });
   return json({ raiseBanner: true, errors: userErrors });
 }
+// [END build-offsite-payments-app.configure]
 
 export default function Index() {
   const nav = useNavigation();
