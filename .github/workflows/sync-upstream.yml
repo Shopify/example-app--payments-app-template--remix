@@ -45,7 +45,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         delete-branch: true
-        base: main_updates
-        branch: main
+        base: main
+        branch: main_updates
         title: 'Sync main with upstream'
         body: 'This is an automated PR that syncs the repo with its upstream main'
