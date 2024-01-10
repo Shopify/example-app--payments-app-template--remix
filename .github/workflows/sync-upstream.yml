@@ -12,7 +12,7 @@ permissions:
   
 jobs:
   sync_latest_from_upstream:
-    runs-on: shopify-ubuntu-latest
+    runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
     name: Sync latest commits from upstream repo
@@ -51,5 +51,3 @@ jobs:
     - name: Create pull request
       if: steps.sync.outputs.has_new_commits == 'true'
       run: gh pr create -B main -H main_updates --title 'Sync main with upstream' --body 'This is an automated PR that syncs the repo with its upstream main'
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
