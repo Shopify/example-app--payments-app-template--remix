@@ -16,6 +16,12 @@ jobs:
     - name: Checkout target repo
       uses: actions/checkout@v4
       with:
+        ref: main
+        fetch-depth: 0
+        
+    - name: Checkout target repo
+      uses: actions/checkout@v4
+      with:
         ref: main_updates
         fetch-depth: 0
 
@@ -46,5 +52,6 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: main_updates
+        base: main
         title: 'Sync main with upstream'
         body: 'This is an automated PR that syncs the repo with its upstream main'
