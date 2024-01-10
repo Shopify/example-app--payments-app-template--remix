@@ -45,6 +45,6 @@ jobs:
       uses: peter-evans/create-pull-request@v6-rc
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        delete-branch: true
+        branch: main_updates
         title: 'Sync main with upstream'
         body: 'This is an automated PR that syncs the repo with its upstream main'
