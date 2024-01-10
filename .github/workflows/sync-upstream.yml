@@ -18,9 +18,6 @@ jobs:
       with:
         ref:  main_updates
 
-    - name: Reset update branch
-      run: git reset --hard main
-
     - name: Sync upstream changes
       id: sync
       uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
