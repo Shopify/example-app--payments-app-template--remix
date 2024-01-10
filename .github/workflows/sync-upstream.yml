@@ -46,12 +46,8 @@ jobs:
     - name: Show value of 'has_new_commits'
       run: echo ${{ steps.sync.outputs.has_new_commits }}
 
-    - name: Create Pull Request
+    - name: Create pull request
       if: steps.sync.outputs.has_new_commits == 'true'
-      uses: peter-evans/create-pull-request@v6-rc
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main_updates
-        base: main
-        title: 'Sync main with upstream'
-        body: 'This is an automated PR that syncs the repo with its upstream main'
+      run: gh pr create -B main -H main_updates --title 'Sync main with upstream' --body 'This is an automated PR that syncs the repo with its upstream main'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
