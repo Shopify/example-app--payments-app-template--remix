@@ -14,7 +14,7 @@ jobs:
   sync_latest_from_upstream:
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     name: Sync latest commits from upstream repo
       
     steps:
