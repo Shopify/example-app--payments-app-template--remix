@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Sync latest commits from upstream repo
 
+    permissions:
+      pull-requests: write
+      
     steps:
     - name: Checkout target repo
       uses: actions/checkout@v4
