@@ -19,7 +19,7 @@ jobs:
         ref:  main_updates
 
     - name: Reset update branch
-      run: git reset --hard origin/main
+      run: git reset --hard main
 
     - name: Sync upstream changes
       id: sync
