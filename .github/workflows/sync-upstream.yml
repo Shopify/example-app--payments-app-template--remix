@@ -16,7 +16,8 @@ jobs:
     - name: Checkout target repo
       uses: actions/checkout@v4
       with:
-        ref:  main_updates
+        ref: main
+        fetch-depth: 0
 
     - name: Sync upstream changes
       id: sync
