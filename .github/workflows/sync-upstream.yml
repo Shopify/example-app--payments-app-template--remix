@@ -7,14 +7,13 @@ on:
 
   workflow_dispatch:
   
-permissions: read-all
-
 jobs:
   sync_latest_from_upstream:
     runs-on: ubuntu-latest
     name: Sync latest commits from upstream repo
 
     permissions:
+      contents: write
       pull-requests: write
       
     steps:
