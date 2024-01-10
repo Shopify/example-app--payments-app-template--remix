@@ -12,7 +12,9 @@ permissions:
   
 jobs:
   sync_latest_from_upstream:
-    runs-on: ubuntu-latest
+    runs-on: shopify-ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     name: Sync latest commits from upstream repo
       
     steps:
@@ -28,6 +30,11 @@ jobs:
         ref: main_updates
         fetch-depth: 0
 
+    - name: Setup git config
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
     - name: Sync upstream changes
       id: sync
       uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
@@ -38,21 +45,8 @@ jobs:
         upstream_sync_repo: Shopify/shopify-app-template-remix
         target_branch_push_args: --force
 
-    - name: New commits found
-      if: steps.sync.outputs.has_new_commits == 'true'
-      run: echo "New commits were found to sync."
-
-    - name: No new commits
-      if: steps.sync.outputs.has_new_commits == 'false'
-      run: echo "There were no new commits."
-
     - name: Show value of 'has_new_commits'
       run: echo ${{ steps.sync.outputs.has_new_commits }}
-
-    - name: Setup git config
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
 
     - name: Create pull request
       if: steps.sync.outputs.has_new_commits == 'true'
