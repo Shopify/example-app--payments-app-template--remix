@@ -6,6 +6,8 @@ on:
     # scheduled at 07:00 every Monday and Thursday
 
   workflow_dispatch:
+  
+permissions: read-all
 
 jobs:
   sync_latest_from_upstream:
