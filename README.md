@@ -1,4 +1,4 @@
-# Shopify Payments App Template - Remix [Typescript]
+# Shopify Payments App Template - Remix [Typescript] testing
 
 The `main` branch in this repository contains no changes to the source [shopify-app-template-remix](https://github.com/Shopify/shopify-app-template-remix). The typescript template for payments apps is a work in progress.
 
