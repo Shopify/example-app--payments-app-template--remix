@@ -14,9 +14,9 @@ jobs:
 
     steps:
     - name: Checkout target repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
-        ref:  main
+        ref:  main_updates
 
     - name: Sync upstream changes
       id: sync
@@ -39,10 +39,13 @@ jobs:
     - name: Show value of 'has_new_commits'
       run: echo ${{ steps.sync.outputs.has_new_commits }}
 
-    - name: Create Fork Sync PR
+    - name: Create Pull Request
       if: steps.sync.outputs.has_new_commits == 'true'
-      run: |
-        gh pr view --json mergedAt -q ".mergedAt" main_updates | grep -E "^$" || \
-        gh pr create -B main -H main_updates --title 'Sync main with upstream' --body 'This is an automated PR that syncs the repo with its upstream main'
-      env:
-        GH_TOKEN: ${{ github.token }}
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        delete-branch: true
+        base: main_updates
+        branch: main
+        title: 'Sync main with upstream'
+        body: 'This is an automated PR that syncs the repo with its upstream main'
