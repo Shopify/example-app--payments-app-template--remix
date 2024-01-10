@@ -53,4 +53,4 @@ jobs:
       if: steps.sync.outputs.has_new_commits == 'true'
       run: gh pr create -B main -H main_updates --title 'Sync main with upstream' --body 'This is an automated PR that syncs the repo with its upstream main'
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        GITHUB_TOKEN: ${{ github.token }}
