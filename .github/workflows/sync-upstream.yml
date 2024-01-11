@@ -31,7 +31,7 @@ jobs:
 
     - name: Reset main_updates
       run: |
-        git push origin --delete main_updates
+        git push origin --delete main_updates &>/dev/null || true  
         git switch -c main_updates 
         git push origin main_updates
 
