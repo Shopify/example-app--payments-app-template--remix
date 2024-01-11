@@ -4,5 +4,5 @@ The `main` branch in this repository contains no changes to the source [shopify-
 
 Consider using one of the following branches instead:
 
-- [`javascript`](https://github.com/Shopify/example-app--credit-card-payments-app-template--remix/tree/javascript): Contains a payments app template built with Javascript.
-- [`docs`](https://github.com/Shopify/example-app--credit-card-payments-app-template--remix/tree/docs): Based on `javascript`, includes tags for documentation.
+- [`javascript`](https://github.com/Shopify/example-app--payments-app-template--remix/tree/javascript): Contains a payments app template built with Javascript.
+- [`docs`](https://github.com/Shopify/example-app--payments-app-template--remix/tree/docs): Based on `javascript`, includes tags for documentation.
