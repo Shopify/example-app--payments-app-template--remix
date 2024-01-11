@@ -38,5 +38,4 @@ jobs:
     - name: Sync upstream changes
       run: |
         gh repo sync shopify/example-app--payments-app-template--remix -b main_updates --force
-        gh pr view --json mergedAt -q ".mergedAt" main_updates | grep -E "^$" || \
         gh pr create -B main -H main_updates --title 'Sync main with upstream' --body 'This is an automated PR that syncs the repo with its upstream main'
