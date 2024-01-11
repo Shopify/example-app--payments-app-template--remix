@@ -37,8 +37,6 @@ jobs:
 
     - name: Reset main_updates
       run: |
-        git remote add origin "https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/example-app--payments-app-template--remix.git"
-        git fetch
         git reset --hard origin/main
 
     - name: Sync upstream changes
