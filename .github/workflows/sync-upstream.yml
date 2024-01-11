@@ -31,6 +31,7 @@ jobs:
 
     - name: Reset main_updates
       run: |
+        git fetch
         git switch main_updates || git switch -c main_updates 
         git reset --hard origin/main
 
