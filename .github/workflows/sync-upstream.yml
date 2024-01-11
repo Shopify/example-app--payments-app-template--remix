@@ -23,12 +23,6 @@ jobs:
       with:
         ref: main
         fetch-depth: 0
-        
-    - name: Checkout target repo
-      uses: actions/checkout@v4
-      with:
-        ref: main_updates
-        fetch-depth: 0
 
     - name: Setup git config
       run: |
@@ -37,6 +31,7 @@ jobs:
 
     - name: Reset main_updates
       run: |
+        git switch main_updates || git switch -c main_updates 
         git reset --hard origin/main
 
     - name: Sync upstream changes
