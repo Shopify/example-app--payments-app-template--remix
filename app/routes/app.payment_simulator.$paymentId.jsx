@@ -7,7 +7,7 @@ import {
   Page,
   Text,
   Select,
-  VerticalStack,
+  BlockStack,
   Link,
   Banner,
 } from "@shopify/polaris";
@@ -110,13 +110,13 @@ export default function PaymentSimulator() {
     >
       <Layout>
         <Layout.Section>
-          <VerticalStack gap="4">
+          <BlockStack gap="4">
             {errorBanner()}
-          </VerticalStack>
+          </BlockStack>
         </Layout.Section>
         <Layout.Section>
           <Card>
-            <VerticalStack gap="5">
+            <BlockStack gap="5">
               <Form method="post">
                 <FormLayout>
                   <Select
@@ -129,7 +129,7 @@ export default function PaymentSimulator() {
                   <Button submit>Submit</Button>
                 </FormLayout>
               </Form>
-            </VerticalStack>
+            </BlockStack>
           </Card>
         </Layout.Section>
       </Layout>
