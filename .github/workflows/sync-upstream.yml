@@ -45,4 +45,4 @@ jobs:
         gh repo sync shopify/example-app--payments-app-template--remix -b javascript --force
         gh pr create --repo Shopify/example-app--payments-app-template--remix --head javascript --title 'Sync javascript with upstream' --body 'This is an automated PR that syncs the repo with its source upstream.' &>/dev/null || true
       env:
-          GH_TOKEN: ${{ github.token }}
+        GH_TOKEN: ${{ github.token }}
