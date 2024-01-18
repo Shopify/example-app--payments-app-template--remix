@@ -6,9 +6,7 @@ on:
     # scheduled at 07:00 every Monday and Thursday
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: write-all
 
 jobs:
   sync_latest_from_upstream:
