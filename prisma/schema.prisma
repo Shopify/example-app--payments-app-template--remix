@@ -30,3 +30,53 @@ model Session {
   collaborator  Boolean?  @default(false)
   emailVerified Boolean?  @default(false)
 }
+
+model PaymentSession {
+  id            String          @id
+  gid           String
+  group         String
+  amount        Decimal
+  test          Boolean
+  currency      String
+  kind          String
+  shop          String
+  paymentMethod String
+  customer      String
+  cancelUrl     String
+  refunds       RefundSession[]
+  captures      CaptureSession[]
+  void          VoidSession?
+  proposedAt    DateTime
+  status        String?
+}
+
+model RefundSession {
+  id         String         @id
+  gid        String
+  payment    PaymentSession @relation(fields: [paymentId], references: [id])
+  paymentId  String
+  amount     Decimal
+  currency   String
+  proposedAt DateTime
+  status     String?
+}
+
+model CaptureSession {
+  id         String          @id
+  gid        String
+  payment    PaymentSession  @relation(fields: [paymentId], references: [id])
+  paymentId  String
+  amount     Decimal
+  currency   String
+  proposedAt DateTime
+  status     String?
+}
+
+model VoidSession {
+  id         String          @id
+  gid        String
+  payment    PaymentSession  @relation(fields: [paymentId], references: [id])
+  paymentId  String          @unique
+  proposedAt DateTime
+  status     String?
+}

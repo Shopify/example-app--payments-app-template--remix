@@ -1,6 +1,24 @@
 # This file stores configurations for your Shopify app.
 
-scopes = "write_products"
+name = "<App Name>"
+client_id = "<API Client ID>"
+application_url = "https://example.com"
+embedded = false
+
+[access_scopes]
+scopes = "write_payment_gateways,write_payment_sessions"
+
+[auth]
+redirect_urls = [
+  "https://app.example.com/api/auth/callback",
+  "https://app.example.com/api/auth/oauth/callback",
+]
+
+[pos]
+embedded = false
+
+[build]
+include_config_on_deploy = true
 
 [webhooks]
 api_version = "2024-10"

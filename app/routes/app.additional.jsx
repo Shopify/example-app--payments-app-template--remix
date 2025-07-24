@@ -12,11 +12,11 @@ import { TitleBar } from "@shopify/app-bridge-react";
 
 export default function AdditionalPage() {
   return (
-    <Page>
+    
       <TitleBar title="Additional page" />
-      <Layout>
+      
         <Layout.Section>
-          <Card>
+          
             <BlockStack gap="300">
               <Text as="p" variant="bodyMd">
                 The app template comes with an additional page which
@@ -33,20 +33,20 @@ export default function AdditionalPage() {
               </Text>
               <Text as="p" variant="bodyMd">
                 To create your own page and have it show up in the app
-                navigation, add a page inside <Code>app/routes</Code>, and a
-                link to it in the <Code>&lt;NavMenu&gt;</Code> component found
-                in <Code>app/routes/app.jsx</Code>.
+                navigation, add a page inside app/routes</Code>, and a
+                link to it in the &lt;NavMenu&gt;</Code> component found
+                in app/routes/app.jsx</Code>.
               </Text>
             </BlockStack>
           </Card>
         </Layout.Section>
         <Layout.Section variant="oneThird">
-          <Card>
+          
             <BlockStack gap="200">
               <Text as="h2" variant="headingMd">
                 Resources
               </Text>
-              <List>
+              
                 <List.Item>
                   <Link
                     url="https://shopify.dev/docs/apps/design-guidelines/navigation#app-nav"
@@ -77,7 +77,7 @@ function Code({ children }: { children: React.ReactNode }) {
       borderColor="border"
       borderRadius="100"
     >
-      <code>{children}</code>
+      {children}</code>
     </Box>
   );
 }
