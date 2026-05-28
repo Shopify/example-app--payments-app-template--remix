@@ -1,6 +1,7 @@
 {
   "name": "example-app--payments-app-template--remix",
   "private": true,
+  "packageManager": "pnpm@11.4.0",
   "scripts": {
     "build": "remix build",
     "predev": "prisma generate && prisma migrate deploy",
@@ -12,7 +13,7 @@
     "config:use": "shopify app config use",
     "env": "shopify app env",
     "start": "remix-serve build/index.js",
-    "docker-start": "npm run setup && npm run start",
+    "docker-start": "pnpm run setup && pnpm run start",
     "setup": "prisma generate && prisma migrate deploy",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "shopify": "shopify",

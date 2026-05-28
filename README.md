@@ -19,23 +19,11 @@ _Notes:_
 1. Disable embedded in the Partners Dashboard
 1. Create a payments app extension for your app. This doesn't need to be filled in yet.
 1. Replace App Name and API Client ID in the [shopify.app.toml](https://github.com/Shopify/example-app--payments-app-template--remix/blob/main-js/shopify.app.toml)
-1. Run `yarn shopify app config push` to update your config with Shopify.
+1. Run `pnpm run shopify app config push` to update your config with Shopify.
 
 ### Setup
 
 If you used the CLI to create the template, you can skip this section.
-
-Using yarn:
-
-```shell
-yarn install
-```
-
-Using npm:
-
-```shell
-npm install
-```
 
 Using pnpm:
 
@@ -44,18 +32,6 @@ pnpm install
 ```
 
 ### Local Development
-
-Using yarn:
-
-```shell
-yarn dev
-```
-
-Using npm:
-
-```shell
-npm run dev
-```
 
 Using pnpm:
 
@@ -142,18 +118,6 @@ To use one of these, you can use a different [datasource provider](https://www.p
 
 Remix handles building the app for you, by running the command below with the package manager of your choice:
 
-Using yarn:
-
-```shell
-yarn build
-```
-
-Using npm:
-
-```shell
-npm run build
-```
-
 Using pnpm:
 
 ```shell
@@ -189,18 +153,6 @@ In Shopify Remix apps you should avoid using `<a>`. Use `<Link> `from `@remix-ru
 
 If you change your app's scopes and notice that authentication goes into a loop and fails with a message from Shopify that it tried too many times, you might have forgotten to update your scopes with Shopify.
 To do that, you can run the `config push` CLI command.
-
-Using yarn:
-
-```shell
-yarn shopify app config push
-```
-
-Using npm:
-
-```shell
-npm run shopify app config push
-```
 
 Using pnpm:
 
