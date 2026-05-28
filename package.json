@@ -1,7 +1,7 @@
 {
   "name": "example-app--payments-app-template--remix",
   "private": true,
-  "packageManager": "pnpm@11.4.0",
+  "packageManager": "pnpm@10.28.0",
   "scripts": {
     "build": "remix build",
     "predev": "prisma generate && prisma migrate deploy",
